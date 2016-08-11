@@ -12,7 +12,8 @@ BugReports: https://github.com/cpsievert/colourpicker/issues
 Depends:
     R (>= 2.10)
 Imports:
-    htmlwidgets
+    htmlwidgets,
+    crosstalk
 LazyData: true
 Remotes: rstudio/crosstalk
 VignetteBuilder: knitr

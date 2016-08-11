@@ -32,9 +32,7 @@
 #' "Transparent", but you can change it to "None" or any other string. This has
 #' no effect on the return value from the input; when the checkbox is checked,
 #' the input will always return the string "transparent".
-
-#' @seealso \code{\link[shinyjs]{updateColourInput}}
-#' \code{\link[shinyjs]{colourPicker}}
+#' @param set sets the crosstalk group to inform about changes in input value.
 #'
 #' @note This function is an adaption of the fabulous \code{\link[shinyjs]{colourInput}}
 #' so that htmlwidgets can take advantage of colour palette changes, without shiny.
@@ -45,8 +43,8 @@
 colourPalette <- function(label, value = "white",
                           showColour = c("both", "text", "background"),
                           palette = c("square", "limited"),
-                          allowedCols = NULL,
-                          allowTransparent = FALSE, transparentText = NULL) {
+                          allowedCols = NULL, allowTransparent = FALSE,
+                          transparentText = NULL, set = basename(tempfile(""))) {
   # sanitize the arguments
   x <- list(
     value = formatHEX(value),
@@ -57,5 +55,8 @@ colourPalette <- function(label, value = "white",
     transparentText = transparentText
   )
   # TODO: add height/width/sizingPolicy
-  htmlwidgets::createWidget("colourPalette", x = x)
+  htmlwidgets::createWidget(
+    "colourPalette", x = x,
+    dependencies = crosstalk::crosstalkLibs()
+  )
 }

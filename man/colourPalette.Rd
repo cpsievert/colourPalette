@@ -6,7 +6,8 @@
 \usage{
 colourPalette(label, value = "white", showColour = c("both", "text",
   "background"), palette = c("square", "limited"), allowedCols = NULL,
-  allowTransparent = FALSE, transparentText = NULL)
+  allowTransparent = FALSE, transparentText = NULL,
+  set = basename(tempfile("")))
 }
 \arguments{
 \item{label}{Display label for the control, or `\code{NULL} for no label.}
@@ -33,6 +34,8 @@ when \code{allowTransparent} is \code{TRUE}. The default value is
 "Transparent", but you can change it to "None" or any other string. This has
 no effect on the return value from the input; when the checkbox is checked,
 the input will always return the string "transparent".}
+
+\item{set}{sets the crosstalk group to inform about changes in input value.}
 }
 \description{
 Create an input control to select a colour, \emph{with or without shiny}
@@ -57,9 +60,5 @@ so that htmlwidgets can take advantage of colour palette changes, without shiny.
 \examples{
 # TODO: get label working (also height/width!)
 colourPalette("hey there", "red", palette = "limited", allowedCols = c("red", "blue"))
-}
-\seealso{
-\code{\link[shinyjs]{updateColourInput}}
-\code{\link[shinyjs]{colourPicker}}
 }
 

@@ -16,10 +16,15 @@ HTMLWidgets.widget({
 
     return {
       renderValue: function(x) {
+        console.log(x);
         // data should contain colourpicker settings
         $el.colourpicker(x);
 
         $el.colourpicker("value", x.value);
+
+        //delete x.value;
+
+        //$el.colourpicker("settings", x);
 
       },
 

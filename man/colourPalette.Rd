@@ -56,7 +56,7 @@ so that htmlwidgets can take advantage of colour palette changes, without shiny.
 }
 \examples{
 # TODO: get label working (also height/width!)
-colourPalette("hey there", "red")
+colourPalette("hey there", "red", palette = "limited", allowedCols = c("red", "blue"))
 }
 \seealso{
 \code{\link[shinyjs]{updateColourInput}}

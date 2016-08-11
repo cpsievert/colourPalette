@@ -41,7 +41,7 @@
 #' @export
 #' @examples
 #' # TODO: get label working (also height/width!)
-#' colourPalette("hey there", "red")
+#' colourPalette("hey there", "red", palette = "limited", allowedCols = c("red", "blue"))
 colourPalette <- function(label, value = "white",
                           showColour = c("both", "text", "background"),
                           palette = c("square", "limited"),
@@ -52,7 +52,7 @@ colourPalette <- function(label, value = "white",
     value = formatHEX(value),
     showColour = match.arg(showColour),
     palette = match.arg(palette),
-    allowedCols = formatHEX(allowedCols),
+    allowedCols = paste(formatHEX(allowedCols), collapse = " "),
     allowTransparent = allowTransparent,
     transparentText = transparentText
   )

@@ -1,0 +1,11 @@
+dependencies:
+  - name: jquery
+    version: 1.11.3
+    src: "htmlwidgets/lib/jquery"
+    script: jquery.min.js
+  - name: colourpicker
+    version: 2.1.12
+    src: "htmlwidgets/lib/colourpicker"
+    script: js/colourpicker.min.js
+    stylesheet: css/colourpicker.min.css
+

@@ -1,0 +1,19 @@
+Package: colourPalette
+Title: Pick your colour(s).
+Version: 0.0.0
+Authors@R: c(person("Carson", "Sievert", role = c("aut", "cre", "cph"),
+    email = "cpsievert1@gmail.com"),
+    person("Dean", "Attali", email = "daattali@gmail.com",
+    role = "aut"))
+License: MIT + file LICENSE
+Description: Pick your colour(s).
+URL: https://github.com/cpsievert/colourpicker
+BugReports: https://github.com/cpsievert/colourpicker/issues
+Depends:
+    R (>= 2.10)
+Imports:
+    htmlwidgets
+LazyData: true
+Remotes: rstudio/crosstalk
+VignetteBuilder: knitr
+RoxygenNote: 5.0.1
